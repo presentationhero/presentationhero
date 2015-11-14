@@ -33,6 +33,7 @@ public class CardboardEye : MonoBehaviour {
   /// Determines which stereo eye to render, that is, which `EyeOffset` and
   /// `Projection` matrix to use and which half of the screen to render to.
   public Cardboard.Eye eye;
+  public int cullingMask;
 
   /// Allows you to flip on or off specific culling mask layers for just this
   /// eye.  The mask is a toggle:  The eye's culling mask is first copied from
@@ -265,7 +266,8 @@ public class CardboardEye : MonoBehaviour {
 
     // Sync the camera properties.
     camera.CopyFrom(monoCamera);
-    camera.cullingMask ^= toggleCullingMask.value;
+	camera.cullingMask ^= cullingMask;
+    //camera.cullingMask ^= toggleCullingMask.value;
 
     // Not sure why we have to do this, but if we don't then switching between drawing to
     // the main screen or to the stereo rendertexture acts very strangely.
