@@ -84,7 +84,7 @@ public class UnityEditorDevice : BaseVRDevice {
         } else if (mouseX > 180) {
           mouseX -= 360;
         }
-        mouseY -= Input.GetAxis("Mouse Y") * 2.4f;
+        mouseY -= 5;
         mouseY = Mathf.Clamp(mouseY, -85, 85);
       } else if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) {
         rolled = true;
