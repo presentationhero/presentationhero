@@ -77,8 +77,8 @@ public class UnityEditorDevice : BaseVRDevice {
       rot = Quaternion.Euler(90, 0, 0) * att;
     } else {
       bool rolled = false;
-      if (Input.GetKey(KeyCode.LeftAlt) || Input.GetKey(KeyCode.RightAlt)) {
-        mouseX += Input.GetAxis("Mouse X") * 5;
+      if (Input.GetKey(KeyCode.T) || Input.GetKey(KeyCode.RightAlt)) {
+        mouseX += 5;
         if (mouseX <= -180) {
           mouseX += 360;
         } else if (mouseX > 180) {
