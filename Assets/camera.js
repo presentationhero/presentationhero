@@ -16,9 +16,9 @@ function Update () {
 	}
 	
 	if(Input.mousePosition.y != mouseY) {
-		var MainCamera : GameObject = this.gameObject.transform.FindChild("Main Camera").gameObject;
+		var MainCamera : GameObject = this.gameObject.transform.FindChild("Camera").gameObject;
 		
-		var cameraRotationX = (Input.mousePosition.y - mouseY) * easeFactor * Time.deltaTime;
+		var cameraRotationX = (mouseY - Input.mousePosition.y) * easeFactor * Time.deltaTime;
 		MainCamera.transform.Rotate(cameraRotationX, 0, 0);
 	}
 	
