@@ -17,7 +17,7 @@ function Start () {
 
     startPoint = transform.position;
     endPoint = Vector3(startPoint.x, startPoint.y + 1, startPoint.z);
-    InvokeRepeating( "Decrease", 0, 0.5 );
+    InvokeRepeating( "Decrease", 5, 1 );
 }
 
 function Update () {
