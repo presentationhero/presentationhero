@@ -45,6 +45,8 @@ private var focused:boolean=false;
 private var Initialised:boolean=false;
 
 function Start () {
+
+ InvokeRepeating( "Decrease", 0, 0.2 );
  	// Request permission to use both webcam and microphone.
  	if(Application.isWebPlayer){
 		yield Application.RequestUserAuthorization (UserAuthorization.Microphone);
@@ -63,7 +65,8 @@ Initialised=true;
 
 }
 
- 
+
+
 //apply the mic input data stream to a float;
 function Update () {
 //pause everything when not focused on the app and then re-initialize.
@@ -84,8 +87,11 @@ if (!focused){
 		}
 
 
+  
 if(Microphone.IsRecording(selectedDevice)){
   loudness = GetDataStream()*sensitivity*(sourceVolume/10);
+
+  
 
   }
    if(debug){
@@ -333,9 +339,19 @@ recording=true;
  
  
  
- 
- 
- 
+ function Decrease () {
+	if (20* loudness > 1){
+		loudness = 1;
+		transform.localScale = new Vector3(0.5, loudness , 1); 
+	} 
+	
+	else{
+		transform.localScale = new Vector3(0.5, 20.0* loudness , 1); 
+	}
+	
+	
+}
+
  
  
  
