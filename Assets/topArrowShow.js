@@ -1,15 +1,19 @@
 ﻿#pragma strict
 
+
 function Start () {
-  GetComponent.<Renderer>().enabled = false;
+  GameObject.Find ("RightTopArrow").transform.localScale = new Vector3(1, 1, 1);
+  GameObject.Find ("LeftTopArrow").transform.localScale = new Vector3(1, 1, 1);
 }
 
 function Update () {
-	if (Camera.main.transform.eulerAngles.x < 320 && Camera.main.transform.eulerAngles.x > 250) {
-    GetComponent.<Renderer>().enabled = false;
+  if (Camera.main.transform.eulerAngles.x < 320 && Camera.main.transform.eulerAngles.x > 250) {
+    GameObject.Find ("RightTopArrow").transform.localScale = new Vector3(1, 1, 1);
+    GameObject.Find ("LeftTopArrow").transform.localScale = new Vector3(1, 1, 1);
   }
   else {
-    GetComponent.<Renderer>().enabled = true;
+    GameObject.Find ("RightTopArrow").transform.localScale = new Vector3(0, 0, 0);
+    GameObject.Find ("LeftTopArrow").transform.localScale = new Vector3(0, 0, 0);
   }
-	Debug.Log(Camera.main.transform.eulerAngles.x);
+  
 }
