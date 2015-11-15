@@ -1,9 +1,5 @@
 ﻿#pragma strict
 
-function Start () {
-
-}
-
-function Update () {
-    Debug.Log( GUI.GetNameOfFocusedControl() );
+public function OnPointerEnter(eventData) {
+    Application.LoadLevel("walk_in");
 }

@@ -33,7 +33,7 @@ function Decrease () {
 	}
 		
 	if( timer >= maxTime ) {
-		Application.LoadLevel("Walk_in");
+		Application.LoadLevel("final");
 	}
 	
 }
